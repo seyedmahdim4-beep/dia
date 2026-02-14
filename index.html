@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎀 ولنتاین برای خانوم مدنی 🎀</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #ffe4ec, #ffd5e0, #ffc1d4);
+            font-family: 'Vazirmatn', sans-serif;
+            position: relative;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        /* Floating items - smaller */
+        .floating-mini {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.4;
+            animation: floatMini 12s infinite;
+            z-index: 1;
+        }
+
+        @keyframes floatMini {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(15px, -15px); }
+        }
+
+        /* Main card - compact */
+        .compact-card {
+            background: rgba(255, 250, 252, 0.9);
+            backdrop-filter: blur(8px);
+            border-radius: 40px;
+            padding: 20px 25px;
+            max-width: 950px;
+            width: 100%;
+            border: 4px solid white;
+            box-shadow: 0 15px 30px rgba(255, 105, 180, 0.2);
+            position: relative;
+            z-index: 10;
+            max-height: 95vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #ffb6c1 #ffe4ec;
+        }
+
+        .compact-card::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .compact-card::-webkit-scrollbar-track {
+            background: #ffe4ec;
+        }
+
+        .compact-card::-webkit-scrollbar-thumb {
+            background: #ffb6c1;
+            border-radius: 10px;
+        }
+
+        /* Header - smaller */
+        .mini-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .mini-crown {
+            font-size: 2.5rem;
+            display: inline-block;
+            animation: miniBounce 2s infinite;
+        }
+
+        @keyframes miniBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .mini-name {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .mini-sub {
+            font-size: 1.2rem;
+            color: #ff69b4;
+            background: #fff0f5;
+            padding: 5px 20px;
+            border-radius: 40px;
+            display: inline-block;
+            margin: 5px 0;
+            border: 2px dashed #ffb6c1;
+        }
+
+        /* Counter row - compact */
+        .counter-mini {
+            background: #fff0f5;
+            border-radius: 60px;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: 3px solid white;
+            box-shadow: 0 5px 0 #ffb6c1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .counter-number-mini {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ff1493;
+            text-shadow: 2px 2px 0 white;
+            background: white;
+            padding: 0 20px;
+            border-radius: 50px;
+            border: 2px solid #ffb6c1;
+        }
+
+        .counter-text-mini {
+            font-size: 1.3rem;
+            color: #ff1493;
+            font-weight: 600;
+        }
+
+        .progress-mini {
+            width: 100%;
+            height: 15px;
+            background: #ffe4ec;
+            border-radius: 30px;
+            border: 2px solid white;
+            margin: 8px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill-mini {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ffb6c1, #ff69b4);
+            transition: width 0.3s;
+        }
+
+        /* Message row - with button beside */
+        .message-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .message-box-mini {
+            flex: 1;
+            background: #fff5fa;
+            border-radius: 25px;
+            padding: 12px 18px;
+            border: 3px solid white;
+            box-shadow: 0 4px 0 #ffb6c1;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .message-text-mini {
+            font-size: 1.1rem;
+            color: #c71585;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .btn-message {
+            background: #ffb6c1;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 4px 0 #ff80bf;
+            transition: 0.1s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .btn-message:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+
+        /* Poetry row - with button beside */
+        .poetry-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .poetry-box-mini {
+            flex: 1;
+            background: #fff0f7;
+            border-radius: 25px;
+            padding: 12px 18px;
+            border: 3px solid white;
+            box-shadow: 0 4px 0 #ffb6c1;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .poetry-text-mini {
+            font-size: 1rem;
+            color: #b0306e;
+            line-height: 1.5;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        .btn-poetry {
+            background: #ffb6c1;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 4px 0 #ff80bf;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .btn-poetry:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+
+        /* Button row - two buttons side by side */
+        .action-row {
+            display: flex;
+            gap: 8px;
+            margin: 12px 0;
+            justify-content: center;
+        }
+
+        .action-btn {
+            flex: 1;
+            background: #ffb6c1;
+            border: none;
+            padding: 10px 5px;
+            font-size: 1rem;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 4px 0 #ff80bf;
+            font-family: 'Vazirmatn', sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            min-width: 0;
+        }
+
+        .action-btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+
+        .action-btn span {
+            font-size: 1.1rem;
+        }
+
+        /* Music row - compact */
+        .music-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff0f5;
+            border-radius: 60px;
+            padding: 8px 15px;
+            border: 3px solid white;
+            box-shadow: 0 4px 0 #ffb6c1;
+            margin-top: 10px;
+        }
+
+        .music-btn-mini {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #ffb6c1;
+            border: 3px solid white;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 3px 0 #ff80bf;
+            flex-shrink: 0;
+        }
+
+        .music-btn-mini:active {
+            transform: translateY(3px);
+            box-shadow: none;
+        }
+
+        .music-info-mini {
+            flex: 1;
+            font-size: 0.95rem;
+            color: #ff1493;
+        }
+
+        .music-title-mini {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .music-status-mini {
+            font-size: 0.85rem;
+            color: #ff69b4;
+        }
+
+        /* Floating hearts - smaller - با قابلیت حرکت از بالا و پایین */
+        .mini-heart {
+            position: fixed;
+            font-size: 1.8rem;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        @keyframes floatFromBottom {
+            0% { transform: translateY(0) scale(0.5); opacity: 1; }
+            100% { transform: translateY(-200px) scale(1.2); opacity: 0; }
+        }
+
+        @keyframes floatFromTop {
+            0% { transform: translateY(0) scale(0.5); opacity: 1; }
+            100% { transform: translateY(200px) scale(1.2); opacity: 0; }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .mini-name { font-size: 2.2rem; }
+            .counter-number-mini { font-size: 2.5rem; }
+            .message-text-mini { font-size: 0.95rem; }
+            .action-btn { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating mini items -->
+    <div class="floating-mini" style="top: 5%; left: 2%;">🌸</div>
+    <div class="floating-mini" style="top: 10%; right: 3%;">🧸</div>
+    <div class="floating-mini" style="bottom: 15%; left: 5%;">🎀</div>
+    <div class="floating-mini" style="bottom: 20%; right: 5%;">✨</div>
+    <div class="floating-mini" style="top: 20%; left: 8%;">🍭</div>
+
+    <div class="compact-card">
+        <!-- Header -->
+        <div class="mini-header">
+            <div class="mini-crown">👑</div>
+            <div class="mini-name">خانوم مدنی</div>
+            <div class="mini-sub">❤️ شاهزاده‌ی قلب من ❤️</div>
+        </div>
+
+        <!-- Counter with progress -->
+        <div class="counter-mini">
+            <span class="counter-number-mini" id="miniCounter">0</span>
+            <span class="counter-text-mini">از ۱۰۰ تبریک</span>
+        </div>
+        <div class="progress-mini">
+            <div class="progress-fill-mini" id="miniProgress" style="width: 0%;"></div>
+        </div>
+
+        <!-- Message box with button beside -->
+        <div class="message-row">
+            <div class="message-box-mini">
+                <div class="message-text-mini" id="miniMessage">
+                    سلام به شاهزاده‌ی خوشگلم...
+                </div>
+            </div>
+            <button class="btn-message" onclick="nextMiniMessage()" title="تبریک بعدی">🎀</button>
+        </div>
+
+        <!-- Poetry box with button beside -->
+        <div class="poetry-row">
+            <div class="poetry-box-mini">
+                <div class="poetry-text-mini" id="miniPoem">
+                    دلم با یاد تو هر شب پریشانتر از این باد
+                </div>
+            </div>
+            <button class="btn-poetry" onclick="nextMiniPoem()" title="شعر بعدی">🌸</button>
+        </div>
+
+        <!-- Two action buttons (Surprise removed) -->
+        <div class="action-row">
+            <button class="action-btn" onclick="heartRainMini()">
+                <span>💖</span> باران قلب
+            </button>
+            <button class="action-btn" onclick="fireworksMini()">
+                <span>🎆</span> آتش‌بازی
+            </button>
+        </div>
+
+        <!-- Music player -->
+        <div class="music-row">
+            <button class="music-btn-mini" id="miniMusicBtn" onclick="toggleMiniMusic()">▶️</button>
+            <div class="music-info-mini">
+                <div class="music-title-mini">ترانه‌ی عشق</div>
+                <div class="music-status-mini" id="miniMusicStatus">برای پخش کلیک کن</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="miniMusic" loop>
+        <source src="/Ghararemoon Yadet Nareh (320).mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        // ==================== ۱۰۰ پیام ====================
+        const miniMessages = [
+            "خانوم مدنی، تو ماه شب‌های منی",
+            "دلم برای خنده‌هات تنگ می‌شه",
+            "تو بهترین اتفاق زندگی‌ای",
+            "چشات مثه دریاست، آروم و بیکران",
+            "دوست دارم تا ته دنیا، تا آخرین نفس",
+            "با تو بودن یعنی پرواز",
+            "تو فرشته‌ی نجات منی",
+            "بی تو لحظه‌ها بی معنی‌ست",
+            "خانوم مدنی، عشق منی",
+            "بخند تا زندگی زیباتر بشه!",
+            "خنده‌هات مثه بارون بهاریه",
+            "تو رویایی که به حقیقت پیوست",
+            "هر روز بیشتر از دیروز دوستت دارم",
+            "نگاهت آرامش می‌ده به دلم",
+            "دوست دارم همیشه کنارم باشی",
+            "تو تنها عشق واقعی هستی",
+            "بی تو هیچم، بی تو پوچم",
+            "خانوم مدنی، نفس منی",
+            "دلم می‌خواد رویاهامو باتو زندگی کنم",
+            "تو مثه یه ستاره‌ی دنباله‌داری",
+            "دختر ناز و خوشگلم، دوستت دارم",
+            "توعروسک قشنگ منی",
+            "چشات مثه دو تا ستاره‌ست",
+            "عشقت در دلم جاودانه",
+            "تواندازه ی هزاران گرم طلا باارزش و درخشانی",
+            "وقتی می‌خندی دنیا قشنگتر می‌شه",
+            "دوست دارم واست قصه بگم",
+            "توهمه ی زندگی منی",
+            "دختر خوبم، عاشقتم",
+            "تو بخند و هزاران بار بمیرم",
+            " هزاران ادم زنده به گور بشه دخترم تب نکنه",
+            "تو مثه کفشدوزک گوگولی، زیبا و کوچولویی",
+            "دوست دارم  قد دنیا",
+            "تو مثه ماه درخشنده هستی",
+            "کاش میتونستم کل عمرم تو بغلت باشم",
+            "تو جیگرمنی",
+            "چشات مثه ویترین عروسکه",
+            "تو مثه رنگین کمونی",
+            "دوست دارم وقتی به ماه نگاه می‌کنی",
+            "تو مثه یه آهنگ قشنگ",
+            "خانوم مدنی، خاص‌ترینی",
+            "تو معنی واقعی عشق رو دادی",
+            "دوست دارم همیشه برات شعر بخونم",
+            "تو مثه یه رویای شیرینی",
+            "با تو بودن یعنی آرامش",
+            "دستات رو بگیرم از همه چی بگذرم",
+            "تو بهترین بخش وجود منی",
+            "نگاهت مثه یه آینه‌ست",
+            "تو کشتی نجات منی",
+            "هر روز بیشتر دوستت دارم",
+            "دلم برای صدات تنگ می‌شه",
+            "تو مثه یه شعر زیبایی",
+            "چشات هر چی نگاه کمه",
+            "دوست دارم برات گل بخرم",
+            "تو مثه فرشته‌ی روی زمینه",
+            "وقتی پیش منی همه چیز درسته",
+            "دوست دارم باهات سفر برم",
+            "تو مثه کتاب شعر پر از قشنگی",
+            "خنده‌هات مثه بارونه",
+            "دلم می‌خواد همیشه کنارم باشی",
+            "تو رو خدا تنها نذار منو",
+            "دوست دارم زیر بارون قدم بزنم باهات",
+            "تو بهترین اتفاقی",
+            "چشات توی دلم می‌درخشد",
+            "دوست دارم توی لحظه‌های سخت باشی",
+            "تو مثه یه پناهگاه امنی",
+            "وقتی می‌خندی من خوشبختم",
+            "دوست دارم تا زنده‌ام",
+            "تو همه‌ی دنیای منی",
+            "دختر ناز و خوشگلم دوستت دارم",
+            "دوست دارم باهات کارتون ببینم",
+            "تو مثه آلبوم خاطره‌هایی",
+            "دلم می‌خواد برات نقاشی کنم",
+            "تو مثه قاب عکس خاطره‌ها",
+            "دوست دارم کفشدوزک بشمریم باهم",
+            "چشات مثه آب نبات چوبیه نقلی و زیبا",
+            "تو مثه سنجاقک روی آبی",
+            "دوست دارم توی بارون راه برم باهات",
+            "تو مثه جعبه موسیقی",
+            "دوست دارم گل ختمی بخورم باهات",
+            "تو مثه دستبند دور دلم",
+            "عزیز دل منی",
+            "توبوی زندگی میدی",
+            "دوست دارم  زندگیممممم",
+            "تو مثه دونات شیرینی",
+            "دوست دارم بخندونمت وقتی غمگینی",
+            "همه چیزای زیبا در تو خلاصه میشه",
+            "آخرین تبریک برای تو عزیزم",
+            "۱۰۰ تا شد ولی عشق من تموم نمی‌شه",
+            "دوستت دارم تا همیشه",
+            "خانوم مدنی، دوستت دارم بی‌نهایت",
+            "تو بهترینی، همیشه بهترین",
+            "عشق من به تو مثل دریاست",
+            "تا ابد مال توام",
+            "خانوم مدنی جان دلم",
+            "تو رو خدا همیشه بمون",
+            "بی تو نمی‌تونم",
+            "دوستت دارم به وسعت آسمون",
+            "تو آسمون دلم ماهی",
+            "آخرین تبریک با عشق"
+        ];
+
+        // ==================== ۱۰ شعر ====================
+        const miniPoems = [
+            "دلم با یاد تو هر شب پریشانتر از این باد\nتویی در سینه‌ی من، ای مه تابانتر از این باد\n(مولانا)",
+            
+            "دل من در هوای توست، تو ندانی چه می‌کند\nهر نفس با خیال تو، دل من خوش است و خرم\n(سعدی)",
+            
+            "من از روز ازل دیوانه بودم\nاسیر عشق تو، فرزانه بودم\n(حافظ)",
+            
+            "بی تو ای سرو روان، با گل و گلشن چه کنم\n(صائب تبریزی)",
+            
+            "در دل من جز تو کسی راه ندارد\nعشق تو با من چو نفس راه و رسم دارد\n(شهریار)",
+            
+            "من از چشمان تو هر شب ستاره جمع می‌کنم\n(فریدون مشیری)",
+            
+            "چه خوش است در دل تو، خانه دگری شدن\n(هوشنگ ابتهاج)",
+            
+            "با تو بودن را دوست دارم، بی تو بودن را نه\n(فروغ فرخزاد)",
+            
+            "آرامش من در توست، ای آشنا ترین\n(احمد شاملو)",
+            
+            "از تو نفس می‌کشم، با تو زندگی می‌کنم\n(شفیعی کدکنی)"
+        ];
+
+        // ==================== متغیرها ====================
+        let miniCount = 0;
+        let miniPoemIndex = 0;
+        const msgEl = document.getElementById('miniMessage');
+        const counterEl = document.getElementById('miniCounter');
+        const progressEl = document.getElementById('miniProgress');
+        const poemEl = document.getElementById('miniPoem');
+
+        // ==================== توابع ====================
+        function nextMiniMessage() {
+            if (miniCount < 100) {
+                miniCount++;
+                counterEl.textContent = miniCount;
+                progressEl.style.width = (miniCount) + '%';
+                
+                msgEl.style.opacity = '0.5';
+                setTimeout(() => {
+                    const randomMsg = miniMessages[Math.floor(Math.random() * miniMessages.length)];
+                    msgEl.textContent = randomMsg + ' ❤️';
+                    msgEl.style.opacity = '1';
+                }, 100);
+                
+                createMiniHeart('bottom');
+                
+                if (miniCount === 100) {
+                    setTimeout(() => {
+                        msgEl.textContent = "🎉 ۱۰۰ تبریک کامل شد! دوستت دارم بی‌نهایت 🎉";
+                        fireworksMini();
+                    }, 200);
+                }
+            }
+        }
+
+        function nextMiniPoem() {
+            miniPoemIndex = (miniPoemIndex + 1) % miniPoems.length;
+            poemEl.style.opacity = '0.5';
+            setTimeout(() => {
+                poemEl.textContent = miniPoems[miniPoemIndex];
+                poemEl.style.opacity = '1';
+            }, 100);
+            createMiniHeart('bottom');
+        }
+
+        // تابع جدید با قابلیت انتخاب جهت
+        function createMiniHeart(direction = 'random') {
+            const heart = document.createElement('div');
+            heart.className = 'mini-heart';
+            const items = ['❤️', '💕', '💖', '🌸', '🧸', '🎀', '✨'];
+            heart.innerHTML = items[Math.floor(Math.random() * items.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            
+            // تعیین جهت حرکت
+            let actualDirection = direction;
+            if (actualDirection === 'random') {
+                actualDirection = Math.random() > 0.5 ? 'bottom' : 'top';
+            }
+            
+            if (actualDirection === 'bottom') {
+                // شروع از پایین
+                heart.style.bottom = '10px';
+                heart.style.animation = 'floatFromBottom 3.5s forwards';
+            } else {
+                // شروع از بالا
+                heart.style.top = '10px';
+                heart.style.animation = 'floatFromTop 3.5s forwards';
+            }
+            
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 3500);
+        }
+
+        function heartRainMini() {
+            // باران قلب از هر دو جهت
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    // نیمی از پایین، نیمی از بالا
+                    const direction = i % 2 === 0 ? 'bottom' : 'top';
+                    createMiniHeart(direction);
+                }, i * 70);
+            }
+            msgEl.textContent = "💖 باران قلب از آسمون و زمین برای خانوم مدنی 💖";
+        }
+
+        function fireworksMini() {
+            // آتش‌بازی از هر دو جهت
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    for (let j = 0; j < 3; j++) {
+                        // ترکیبی از بالا و پایین
+                        const direction = Math.random() > 0.5 ? 'bottom' : 'top';
+                        createMiniHeart(direction);
+                    }
+                }, i * 100);
+            }
+            msgEl.textContent = "🎆 آتش‌بازی عشق از همه جای دنیا برای تو 🎆";
+        }
+
+        // Music
+        const music = document.getElementById('miniMusic');
+        const musicBtn = document.getElementById('miniMusicBtn');
+        const musicStatus = document.getElementById('miniMusicStatus');
+        let musicPlaying = false;
+
+        function toggleMiniMusic() {
+            if (musicPlaying) {
+                music.pause();
+                musicBtn.innerHTML = '▶️';
+                musicStatus.textContent = 'برای پخش کلیک کن';
+            } else {
+                music.play().catch(() => {});
+                musicBtn.innerHTML = '⏸️';
+                musicStatus.textContent = 'در حال پخش';
+            }
+            musicPlaying = !musicPlaying;
+        }
+
+        // Start
+        window.onload = () => {
+            msgEl.textContent = miniMessages[Math.floor(Math.random() * 30)] + ' ❤️';
+            poemEl.textContent = miniPoems[0];
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const direction = i % 2 === 0 ? 'bottom' : 'top';
+                    createMiniHeart(direction);
+                }, i * 200);
+            }
+        };
+    </script>
+</body>
+</html>

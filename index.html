@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,8 +36,15 @@
         }
 
         @keyframes floatMini {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(15px, -15px); }
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(15px, -15px);
+            }
         }
 
         /* Main card - compact */
@@ -83,8 +91,15 @@
         }
 
         @keyframes miniBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
         }
 
         .mini-name {
@@ -346,24 +361,50 @@
         }
 
         @keyframes floatFromBottom {
-            0% { transform: translateY(0) scale(0.5); opacity: 1; }
-            100% { transform: translateY(-200px) scale(1.2); opacity: 0; }
+            0% {
+                transform: translateY(0) scale(0.5);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-200px) scale(1.2);
+                opacity: 0;
+            }
         }
 
         @keyframes floatFromTop {
-            0% { transform: translateY(0) scale(0.5); opacity: 1; }
-            100% { transform: translateY(200px) scale(1.2); opacity: 0; }
+            0% {
+                transform: translateY(0) scale(0.5);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(200px) scale(1.2);
+                opacity: 0;
+            }
         }
 
         /* Responsive */
         @media (max-width: 600px) {
-            .mini-name { font-size: 2.2rem; }
-            .counter-number-mini { font-size: 2.5rem; }
-            .message-text-mini { font-size: 0.95rem; }
-            .action-btn { font-size: 0.85rem; }
+            .mini-name {
+                font-size: 2.2rem;
+            }
+
+            .counter-number-mini {
+                font-size: 2.5rem;
+            }
+
+            .message-text-mini {
+                font-size: 0.95rem;
+            }
+
+            .action-btn {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Floating mini items -->
     <div class="floating-mini" style="top: 5%; left: 2%;">🌸</div>
@@ -431,7 +472,7 @@
 
     <!-- Audio -->
     <audio id="miniMusic" loop>
-        <source src="/Ghararemoon Yadet Nareh (320).mp3" type="audio/mp3">
+        <source src="Ghararemoon Yadet Nareh (320).mp3" type="audio/mp3">
     </audio>
 
     <script>
@@ -542,23 +583,23 @@
         // ==================== ۱۰ شعر ====================
         const miniPoems = [
             "دلم با یاد تو هر شب پریشانتر از این باد\nتویی در سینه‌ی من، ای مه تابانتر از این باد\n(مولانا)",
-            
+
             "دل من در هوای توست، تو ندانی چه می‌کند\nهر نفس با خیال تو، دل من خوش است و خرم\n(سعدی)",
-            
+
             "من از روز ازل دیوانه بودم\nاسیر عشق تو، فرزانه بودم\n(حافظ)",
-            
+
             "بی تو ای سرو روان، با گل و گلشن چه کنم\n(صائب تبریزی)",
-            
+
             "در دل من جز تو کسی راه ندارد\nعشق تو با من چو نفس راه و رسم دارد\n(شهریار)",
-            
+
             "من از چشمان تو هر شب ستاره جمع می‌کنم\n(فریدون مشیری)",
-            
+
             "چه خوش است در دل تو، خانه دگری شدن\n(هوشنگ ابتهاج)",
-            
+
             "با تو بودن را دوست دارم، بی تو بودن را نه\n(فروغ فرخزاد)",
-            
+
             "آرامش من در توست، ای آشنا ترین\n(احمد شاملو)",
-            
+
             "از تو نفس می‌کشم، با تو زندگی می‌کنم\n(شفیعی کدکنی)"
         ];
 
@@ -576,16 +617,16 @@
                 miniCount++;
                 counterEl.textContent = miniCount;
                 progressEl.style.width = (miniCount) + '%';
-                
+
                 msgEl.style.opacity = '0.5';
                 setTimeout(() => {
                     const randomMsg = miniMessages[Math.floor(Math.random() * miniMessages.length)];
                     msgEl.textContent = randomMsg + ' ❤️';
                     msgEl.style.opacity = '1';
                 }, 100);
-                
+
                 createMiniHeart('bottom');
-                
+
                 if (miniCount === 100) {
                     setTimeout(() => {
                         msgEl.textContent = "🎉 ۱۰۰ تبریک کامل شد! دوستت دارم بی‌نهایت 🎉";
@@ -612,13 +653,13 @@
             const items = ['❤️', '💕', '💖', '🌸', '🧸', '🎀', '✨'];
             heart.innerHTML = items[Math.floor(Math.random() * items.length)];
             heart.style.left = Math.random() * 100 + '%';
-            
+
             // تعیین جهت حرکت
             let actualDirection = direction;
             if (actualDirection === 'random') {
                 actualDirection = Math.random() > 0.5 ? 'bottom' : 'top';
             }
-            
+
             if (actualDirection === 'bottom') {
                 // شروع از پایین
                 heart.style.bottom = '10px';
@@ -628,7 +669,7 @@
                 heart.style.top = '10px';
                 heart.style.animation = 'floatFromTop 3.5s forwards';
             }
-            
+
             document.body.appendChild(heart);
             setTimeout(() => heart.remove(), 3500);
         }
@@ -671,7 +712,7 @@
                 musicBtn.innerHTML = '▶️';
                 musicStatus.textContent = 'برای پخش کلیک کن';
             } else {
-                music.play().catch(() => {});
+                music.play().catch(() => { });
                 musicBtn.innerHTML = '⏸️';
                 musicStatus.textContent = 'در حال پخش';
             }
@@ -691,4 +732,5 @@
         };
     </script>
 </body>
+
 </html>
